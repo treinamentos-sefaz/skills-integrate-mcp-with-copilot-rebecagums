@@ -16,12 +16,56 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.admin-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.admin-controls form {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 180px);
+  gap: 6px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  text-align: left;
+}
+
+.admin-controls input {
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.admin-controls form button {
+  grid-column: 2;
+}
+
+.admin-controls #auth-message {
+  max-width: 260px;
+  color: white;
+  font-size: 14px;
+}
+
+.admin-controls #auth-message.error {
+  color: #ffccbc;
 }
 
 header h1 {
@@ -197,4 +241,30 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 70px;
+  }
+
+  .admin-controls {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    align-items: stretch;
+  }
+
+  .admin-controls > button {
+    align-self: flex-end;
+  }
+
+  .admin-controls form {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .admin-controls #auth-message {
+    max-width: none;
+    text-align: right;
+  }
 }

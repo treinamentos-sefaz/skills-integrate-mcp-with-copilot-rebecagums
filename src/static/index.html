@@ -8,6 +8,18 @@
   </head>
   <body>
     <header>
+      <div class="admin-controls">
+        <button type="button" id="login-toggle">Teacher Login</button>
+        <button type="button" id="logout-button" class="hidden">Log Out</button>
+        <form id="login-form" class="hidden">
+          <label for="teacher-username">Username:</label>
+          <input id="teacher-username" name="username" autocomplete="username" required />
+          <label for="teacher-password">Password:</label>
+          <input id="teacher-password" name="password" type="password" autocomplete="current-password" required />
+          <button type="submit">Log In</button>
+        </form>
+        <p id="auth-message" role="status" aria-live="polite"></p>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
@@ -37,6 +49,7 @@
           </div>
           <button type="submit">Sign Up</button>
         </form>
+        <p id="teacher-required" class="hidden">Log in as a teacher to manage registrations.</p>
         <div id="message" class="hidden"></div>
       </section>
     </main>
